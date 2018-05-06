@@ -4,43 +4,32 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    var min = 0;
-    var max = A.length-1;
-    var mid = 0;
+    //first
     var result = [-1, -1];
-    
-    if(A.length == 0){
-        return result;
+    var start = -1;
+    var end = 0;
+    if (target < nums[0] || target > nums[nums.length - 1]) return result;
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] === target) {start = i; end = i;break; }
+        // console.log(start);
     }
-    
-    
-    while(min <= max){
-        mid = (min+max)/2;
-        
-        if(target == A[mid]){
-            var start = mid;
-            var end = mid;
-            
-            while(start - 1 >= 0 && target == A[start-1]){
-                start--;
-            }
-            while(end + 1 < A.length && target == A[end + 1]){
-                end++;
-            }
-            
-            result[0] = start;
-            result[1] = end;
-            return result;
-        }
-        
-        if(target < A[mid]){
-            max = mid-1;
-        }else{
-            min = mid+1;
-        }
-    }
-    
-  return result;  
+    // start = end;
+    while(nums[end]===target) end++;
+    return [start,end-1]
+
+    //second
+
+    // var low = 0,
+    //     high = nums.length - 1,
+    //     mid;
+    // while (nums[]=low < high) {
+    //     mid = (nums[]=low + high) / 2;
+    //     if (mid < target) { nums[]=low = mid; }
+    //     if (mid > target) { high = mid; }
+    //     if (mid === target) { break; }
+    // }
+    // if (mid != target) { return result; }
+    // return mid;
 };
-var a = [1,2,3,3,4,4]
-console.log(searchRange(a,3))
+var a = [1, 4, 5, 5, 5, 9, 10, 20]
+console.log(searchRange(a, 9))
