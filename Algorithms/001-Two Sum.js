@@ -21,5 +21,4 @@ var twoSum = function(nums, target) {
 
 var number = [3, 2, 4, 5, 7, 6];
 var result = twoSum(number, 8);
-console.log(result.toString())
-console.log(number[]);
+console.log(result.toString());
