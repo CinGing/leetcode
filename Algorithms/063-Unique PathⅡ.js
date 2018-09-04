@@ -19,6 +19,7 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
             // console.log(flag);
         } else { flag[0][j] = 0; }
     }
+    console.log(flag)
     // return flag
     for (var i = 1; i < wd; i++) {
         flag.push([]);
