@@ -17,18 +17,20 @@ var maximalRectangle = function(matrix) {
         console.log(array);
         for (var i = 0; i < lg; i++) {
             var left = i - 1;
-            while (left >= 0 && array[i] <= array[left]) left++;
+            while (left >= 0 && array[i] <= array[left]) left--;
             var right = i + 1;
-            while(right<lg&&array[i]<=array[right]) right++;
-            max = Math.max(max,array[i]*(right-left-1));
+            while (right < lg && array[i] <= array[right]) right++;
+            max = Math.max(max, array[i] * (right - left - 1));
         }
     }
     return max;
 }
 var a = [
-    ["1", "0", "1", "0", "0"],
-    ["0", "1", "1", "1", "0"],
-    ["1", "1", "1", "1", "1"],
-    ["1", "0", "0", "1", "0"]
+    ["1", "0", "1", "1", "0", "1"],
+    ["1", "1", "1", "1", "1", "1"],
+    ["0", "1", "1", "0", "1", "1"],
+    ["1", "1", "1", "0", "1", "0"],
+    ["0", "1", "1", "1", "1", "1"],
+    ["1", "1", "0", "1", "1", "1"]
 ]
 console.log(maximalRectangle(a));
