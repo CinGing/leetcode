@@ -8,9 +8,11 @@ var calculate = function(s) {
     var number = 0;
     var sign = 1;
     for (var i = 0; i < s.length; i++) {
-        char c = s.charAt(i);
-        if (isNaN(c)) {
-            number = 10 * number + (c - '0');
+        var c = s.charAt(i);
+        if (c === ' ') {
+            c = null;
+        } else if (!isNaN(c)) {
+            number = 10 * number + Number(c - '0');
         } else if (c === '+') {
             result += sign * number;
             number = 0;
@@ -24,7 +26,7 @@ var calculate = function(s) {
             stack.push(sign);
             sign = 1;
             result = 0;
-        } else if (c === ')') {
+        } else if (c === ')' || c === " ") {
             result += sign * number;
             number = 0;
             result *= stack.pop();
@@ -33,6 +35,7 @@ var calculate = function(s) {
     }
     if (number != 0) result += sign * number;
     return result;
+
 };
-var a = '1+(2+3)';
+var a = ' 1 + 1';
 console.log(calculate(a));
