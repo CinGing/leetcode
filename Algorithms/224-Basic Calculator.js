@@ -26,16 +26,17 @@ var calculate = function(s) {
             stack.push(sign);
             sign = 1;
             result = 0;
-        } else if (c === ')' || c === " ") {
+        } else if (c === ')') {
             result += sign * number;
             number = 0;
             result *= stack.pop();
             result += stack.pop();
         }
+        // console.log(result);
     }
-    if (number != 0) result += sign * number;
+    // if (number != 0) result *= sign * number;
     return result;
 
 };
-var a = ' 1 + 1';
+var a = '8-(1+(1+(1+1)))';
 console.log(calculate(a));
