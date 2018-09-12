@@ -19,7 +19,6 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
             // console.log(flag);
         } else { flag[0][j] = 0; }
     }
-    console.log(flag)
     // return flag
     for (var i = 1; i < wd; i++) {
         flag.push([]);
@@ -29,6 +28,7 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
             flag[i][0] = 1;
         } else { flag[i][0] = 0; }
     }
+    console.log(flag)
     for (var i = 1; i < wd; i++) {
         for (var j = 1; j < lg; j++) {
             if (obstacleGrid[i][j] === 1) {
@@ -38,11 +38,12 @@ var uniquePathsWithObstacles = function(obstacleGrid) {
             }
         }
     }
+    console.log(flag)
     return flag[wd - 1][lg - 1];
 };
 var test = [
     [0, 0, 1, 0],
-    [0, 1, 0, 0],
+    [1, 0, 0, 0],
     [0, 0, 0, 0],
     [1, 0, 0, 0]
 ];
