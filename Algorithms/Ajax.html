@@ -18,7 +18,7 @@
     }
 
     function myFunction() {
-        loadXMLDoc("file:///E:/11.html", function() {
+        loadXMLDoc("/statics/demosource/ajax_info.txt", function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
             }
