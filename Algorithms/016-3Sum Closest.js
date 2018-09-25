@@ -16,14 +16,15 @@ var threeSumClosest = function(nums, target) {
             for (var k = j + 1; k < len; k++) {
                 if (nums[i] + nums[j] + nums[k] === target) {
                     return target;
-                if (min === Math.abs(nums[i] + nums[j] + nums[k] - target))
-                    result = nums[i] + nums[j] + nums[k];
+                    if (min === Math.abs(nums[i] + nums[j] + nums[k] - target))
+                        result = nums[i] + nums[j] + nums[k];
+                }
             }
         }
+        return result;
     }
-    return result;
-};
-var a = [1,1,-1,-1,3];
+}
+var a = [1, 1, -1, -1, 3];
 var target = 1;
 console.log(threeSumClosest(a, target));
 

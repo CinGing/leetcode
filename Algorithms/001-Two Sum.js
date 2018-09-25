@@ -23,18 +23,5 @@ var number = [3, 2, 4, 5, 7, 6];
 var result = twoSum(number, 8);
 console.log(result.toString());
 
-var a = 0;
-switch (a) {
-    case 0:
-        a = 4;
-    case 1:
-        a = 2;
-    case 2:
-        a = 3;
-    case 3:
-    a = 7;break;
-    default:
-    a = 5
-
-}
-console.log(a);
+var a = 0,b=1,c=2;
+console.log([a,b,c]);
