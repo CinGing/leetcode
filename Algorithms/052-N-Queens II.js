@@ -25,3 +25,5 @@ var totalNQueens = function(n) {
 };
 var a = 8;
 console.log(totalNQueens(a));
+var a = 15;
+console.log(String.fromCharCode(a));
