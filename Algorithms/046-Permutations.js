@@ -9,16 +9,17 @@ var permute = function(nums) {
 
     function backtrack(res, templist, nums) {
         if (nums.length === templist.length) {
+        	// templist.push(6);
             res.push(templist.slice());
         } else {
             for (var i = 0; i < nums.length; i++) {
                 if (templist.indexOf(nums[i]) != -1) continue;
                 templist.push(nums[i]);
                 backtrack(res, templist, nums);
+                console.log(i+' '+nums[i]+' '+templist);
                 templist.pop();
             }
         }
-
     }
 };
 
