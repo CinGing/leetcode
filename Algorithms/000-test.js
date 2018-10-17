@@ -122,5 +122,25 @@
 // })();
 // console.log(b);
 // console.log(a);
-var a = 1.2;
-console.log(typeof a == "float")
+// var a = 1.2;
+// console.log(typeof a == "float")
+var i, j, k;
+for (var i = 0; i < 21; i++) {
+    for (var j = 0; j < 34; j++) {
+        if (7 * i + 4 * j == 100) {
+            console.log(i + ' ' + j + ' ' + (100 - i - j));
+            break;
+        }
+    }
+}
+// var a,b;
+// for(a = 0;a<10;a+=2){
+// 	for(b=1;b<10;b+=2){
+// 		if(a+b>5){
+// 			console.log(a+" "+b);
+// 			break;
+// 		}
+// 	}
+// }
+var a =5
+console.log((5>6)?1.1:1)

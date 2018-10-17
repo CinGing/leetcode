@@ -7,9 +7,11 @@
  */
 /**
  * @param {Interval[]} intervals
+ * @param {Interval} newInterval
  * @return {Interval[]}
  */
-var merge = function(intervals) {
+var insert = function(intervals, newInterval) {
+    intervals.push(newInterval);
     if (!intervals.length) return intervals;
     intervals.sort((a, b) => a.start !== b.start ? a.start - b.start : a.end - b.end)
     var prev = intervals[0]
@@ -23,12 +25,10 @@ var merge = function(intervals) {
         }
     }
     return res
-}; 
-
+};
 var a = [
     [1, 3],
-    [2, 6],
-    [8, 10],
-    [15, 18]
+    [6, 9]
 ];
-console.log(merge(a));
+var b = [2,5];
+console.log(insert(a, b));

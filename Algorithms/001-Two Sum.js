@@ -23,5 +23,7 @@ var number = [3, 2, 4, 5, 7, 6];
 var result = twoSum(number, 8);
 console.log(result.toString());
 
-var a = 0,b=1,c=2;
-console.log([a,b,c]);
+var a = 0,
+    b = 1,
+    c = 2;
+console.log([a, b, c]);
