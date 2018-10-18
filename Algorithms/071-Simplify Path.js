@@ -4,7 +4,7 @@
  */
 var simplifyPath = function(path) {
     const stack = [];
-    const a = path.split("/").filter(t => !['/', '', '.'].includes(t));
+    const a = path.split("/").filter(t => !['/', '', '.'].includes(t));z
     // a.forEach(function(t){ t === '..' ? stack.pop() : stack.push(t)});
     a.forEach(t => t === '..' ? stack.pop() : stack.push(t));
     return '/'+stack.join('/');
