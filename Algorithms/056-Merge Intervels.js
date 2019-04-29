@@ -9,26 +9,28 @@
  * @param {Interval[]} intervals
  * @return {Interval[]}
  */
-var merge = function(intervals) {
-    if (!intervals.length) return intervals;
-    intervals.sort((a, b) => a.start !== b.start ? a.start - b.start : a.end - b.end)
-    var prev = intervals[0]
-    var res = [prev]
-    for (var curr of intervals) {
-        if (curr.start <= prev.end) {
-            prev.end = Math.max(prev.end, curr.end)
+var merge = function(arr) {
+    if (!arr.length) return arr;
+    arr.sort((a, b) => a[0] - b[0])
+    var next = [1,3]
+    var res = [next]
+    for (var curr of arr) {
+        if (curr[0] <= next[1]) {
+            next[1] = Math.max(next[1], curr[1])
         } else {
             res.push(curr)
-            prev = curr
+            next = curr
         }
+        console.log(next,curr);
     }
     return res
-}; 
+};
 
 var a = [
     [1, 3],
     [2, 6],
     [8, 10],
-    [15, 18]
+    [15, 18],
+    [17,20]
 ];
 console.log(merge(a));
