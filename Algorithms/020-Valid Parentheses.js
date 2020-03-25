@@ -8,11 +8,12 @@ var map = {
     "[": "]",
     "{": "}"
 }
-var isValid = function(s) {
+var isValid = function (s) {
     var stack = [];
     for (var i = 0; i < s.length; i++) {
-        if (map[s[i]])
+        if (map[s[i]]) {
             stack.push(map[s[i]]);
+        }
         else if (s[i] !== stack.pop()) {
             return false;
         }
