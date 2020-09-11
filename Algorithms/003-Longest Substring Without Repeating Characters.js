@@ -24,21 +24,30 @@ var lengthOfLongestSubstring = function(s) {
     // return max;
 
     //方法二:
-    if (!s || s.length == 0) return 0;
-    if (s.length == 1) return 1;
-    var maxLen = 1;
-    var start = 0;
-    for (var i = 1; i < s.length; i++) {
-    	var c = s[i];
-    	var j = s.substring(start,i).indexOf(c)//在start-i前的字符串中找到是s[i],找不到返回-1,找到返回s从左数第一个字符
-    	if(j>=0){
-    		start +=j + 1; 
-    	}
-    	else {
-    		maxLen = Math.max(maxLen,i-start+1)
-    	}
+    // if (!s || s.length == 0) return 0;
+    // if (s.length == 1) return 1;
+    // var maxLen = 1;
+    // var start = 0;
+    // for (var i = 1; i < s.length; i++) {
+    //     var c = s[i];
+    //     var j = s.substring(start, i).indexOf(c)
+    //     if (j >= 0) {
+    //         start += j + 1;
+    //     } else {
+    //         maxLen = Math.max(maxLen, i - start + 1)
+    //     }
+    // }
+    // return maxLen;
+
+    // 方法三:
+    // var maxLen = 0
+    for (var i = 0; i < s.length; i++) {
+        var hash = {}
+        hash[s[i]] = i
+        if (hash[s[i + 1]]) {
+
+        }
     }
-    return maxLen;
 };
 var a = "abcdbca";
 console.log(lengthOfLongestSubstring(a));
